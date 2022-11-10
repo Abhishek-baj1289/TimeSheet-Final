@@ -1,60 +1,16 @@
-import "./App.css";
-import React, { useState } from "react";
-import "./test.js"
-import './App.css';
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
 
-import { Routes ,Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-// import Home component
-import Home from "./components/Home";
-import Create from "./components/Create";
-// import About component
-import Deletepage from "./components/Deletepage";
-// import ContactUs component
-import Fetch from "./components/Fetch";
+import React, { useState } from "react";
+//import "./test.js.js"
 // import { format } from "date-fns"
 // import { get } from "jquery";
 // import $ from 'jquery';
 //this is the front end component of the react app
 
-function App() {
-return(
-  <div>
-      {/* This is the alias of BrowserRouter i.e. Router */}
-      <Router>
-        <Routes>
-          {/* This route is for home component 
-          with exact path "/", in component props 
-          we passes the imported component*/}
-          <Route path='/' element={<Home/>} />
-            
-          {/* This route is for about component 
-          with exact path "/about", in component 
-          props we passes the imported component*/}
-          <Route path='/create' element={<Create/>} />
-          <Route path='/deletepage' element={<Deletepage/>} />
-          
-            
-          {/* This route is for contactus component
-          with exact path "/contactus", in 
-          component props we passes the imported component*/}
-          <Route path="/fetch" element={<Fetch/>} />
-            
-          {/* If any route mismatches the upper 
-          route endpoints then, redirect triggers 
-          and redirects app to home component with to="/" */}
-          {/* <Navigate to="/" /> */}
-        </Routes>
-      </Router>
-    </div>
-)
-  /* const [returnedData, setReturnedData] = useState(['hello']);
+function Deletepage() {
+  const [returnedData, setReturnedData] = useState(['hello']);
 
   const [employee, setEmployee] = useState({
-    EmployeeId: 0,
+    // EmployeeId: 0,
     Firstname: '',
     Middlename:'',
     Lastname: '',
@@ -66,7 +22,7 @@ return(
     Locations:'',
     Addresses:'',
     phone: 0,
-  }) *///use state is a react hook for functional component
+  })//use state is a react hook for functional component
 
 //location api call  
   // const [location, setLocation] = useState({
@@ -91,10 +47,10 @@ return(
   //   setLocation(new_loc[0]);
   // }
 
-  /* const setInput = (e) => {
+  const setInput = (e) => {
     const { name, value } = e.target; //here we are destructuring this is somewhat TODO concept but in a gist
     console.log(value);
-    if (name === "EmployeeID" || name === "Age") {
+    if (name === " Firstname" || name === "Age") {
       setEmployee(prevState => ({
         ...prevState,
         [name]: parseInt(value)
@@ -108,10 +64,10 @@ return(
       ...prevState,
       [name]: value
     }));
-  } */
+  }
 
   //functional component in react we're going to need use state
-  /* const fetchData = async () => {
+  const fetchData = async () => {
     // This is the call to the backend api which is using an express server
       console.log(employee);
     //   if(employee.length===0){
@@ -141,10 +97,10 @@ return(
     setReturnedData(newData[0]);
   
     
- */
+
 
     
-  /* };
+  };
   const createEmployee = async () => {
     // This is the call to the backend api which is using an express server
     const newData = await fetch("/hello", {
@@ -192,7 +148,7 @@ return(
     // setReturnedData(newData[0]);
   
 
-  }; */
+  };
   // const deleteEmployee = async () => {
   //   // This is the call to the backend api which is using an express server
   //     // console.log(employee);
@@ -239,7 +195,7 @@ return(
 //     console.log('Object is NOT empty');
 //   
 // }, [returnedData]);
-/* let res=""
+let res=""
 // function fetchdate() {
   const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 //   // const date = new date(ret);
@@ -258,7 +214,7 @@ return(
   if (isNaN(getd) || getm===undefined || isNaN(gety)){
     res="";
   }
- */
+
 // }
 // const wrapperFunction = () => {
 //   //do something
@@ -274,23 +230,23 @@ return(
 // datetime=datetime.getFullYear()
 // console.log(datetime);
 // var formattedDate = format(datetime, "MMMM do, yyyy H:mma");
-/* if(returnedData.length===0){
+if(returnedData.length===0){
   alert("This user doesnt exist");
 }
   //to make sure we can se whats going on on the inspection tool
-  return ( */
-    {/* <div className="App">
+  return (
+    <div className="App">
     <div className ="row">
     <div className ="column">
     <input
-    id="em"
-      type="number"
-      name="EmployeeId"
-      placeholder="EmployeeID"
+     id="vi"
+      name="vid"
 
+      placeholder="vid"
       onChange={setInput}
     ></input>
-    <input
+
+   <input
     id="fn"
     onKeyPress={(event) => {
       if (!/[A-Za-z]/.test(event.key)) {
@@ -334,13 +290,13 @@ return(
       placeholder="Fathername"
       onChange={setInput}
     ></input>
-     <input
+     {/* <input
      id="vi"
       name="vid"
 
       placeholder="vid"
       onChange={setInput}
-    ></input>
+    ></input> */}
      <input
      id="ma"
      type="email"
@@ -383,10 +339,58 @@ return(
 
       
       {/* <option>Bangalore</option> */}
+    </select>
+     <input
+     id="ad"
+      name="Addresses"
+      placeholder="Address"
+      onChange={setInput}
+    ></input>
+     <input
+     id="ph"
+     type="number"
+     onKeyPress={(event) => {
+      if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();
+      }
+    }}
+      name="phone"
+      placeholder="Phone number"
+      onChange={setInput}
+    ></input>
     
+    
+    {/* <button id="fe" onClick={()=>fetchData()}>Fetch</button> */}
+    {/* <button id="cr" onClick={() => createEmployee()}>Create</button> */}
+    <button id="cr" onClick={() => deleteEmployee()}>Delete</button>
+    {/* <button id="fl" onClick={() => fetchLocation()}>Location placeholder</button> */}
+    </div>
+    {/* //place where data is to be diplayed on the front end */}
+    <div className ="column">
+      <div id = "jay">
+   
+    {/* <p id="ep">EmployeeID&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.EmployeeId}</p> */}
+    <p>vid&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: &#160;&#160;&#160;{returnedData.vid}</p>
+    <p>Firstname&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Firstname}</p>
+    <p>Middlename&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Middlename}</p>
+    <p>Lastname&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Lastname}</p>
+    <p>Fathername&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Fathername}</p>
+    {/* <p>vid&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: &#160;&#160;&#160;{returnedData.vid}</p> */}
+    <p>Email&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Email}</p>
+    <p>Dob&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{res}</p>
+    <p>Gender&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Gender}</p>
+    <p>Locations&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Locations}</p>
+    <p>Addresses&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.Addresses}</p>
+    <p>phone&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;&#160;{returnedData.phone}</p>
+    </div>
+    </div>
+    </div>
+  </div>
+  // </form>
+  );
 }
 
-export default App;
+export default Deletepage;
 
 //how do we go ahead and make the API call, store the value in rd data
 //and then produce that change on the UI
