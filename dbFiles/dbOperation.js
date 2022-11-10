@@ -24,6 +24,7 @@ const createEmployee = async (Employee) => {
     return employees;
   } catch (error) {
     console.log(error);
+   
   }
 };
 const deleteEmployee = async (Employee) => {

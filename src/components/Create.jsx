@@ -3,7 +3,10 @@
 // //import "./components/test.js"
 // // import { format } from "date-fns"
 // // import { get } from "jquery";
-// // import $ from 'jquery';
+ import $ from 'jquery'; 
+ import PHONE_REGEX from 'jquery';
+ import { ready } from 'jquery';
+ import bind from 'jquery'
 // //this is the front end component of the react app
 
 // function Create() {
@@ -411,11 +414,12 @@ function Create() {
 
   const [employee, setEmployee] = useState({
     // EmployeeId: 0,
+    vid:'',
     Firstname: '',
     Middlename:'',
     Lastname: '',
     Fathername:'',
-    vid:'',
+    // vid:'',
     Email:'',
     Dob: '1997-06-06',
     Gender:'', 
@@ -450,7 +454,7 @@ function Create() {
   const setInput = (e) => {
     const { name, value } = e.target; //here we are destructuring this is somewhat TODO concept but in a gist
     console.log(value);
-    if (name === " Firstname" || name === "Age") {
+    if (name === "Firstname" || name === "Age") {
       setEmployee(prevState => ({
         ...prevState,
         [name]: parseInt(value)
@@ -633,6 +637,42 @@ let res=""
 if(returnedData.length===0){
   alert("This user doesnt exist");
 }
+
+// this is the validation function on phone number
+// function phoneno(){          
+//   $('#ph').KeyPress(function(e) {
+//       var a = [];
+//       var k = e.which;
+
+//       for ( var i = 48; i < 58; i++)
+//           a.push(i);
+
+//       if (!(a.indexOf(k)>=0))
+//           e.preventDefault();
+//   });
+// }
+
+
+
+
+ var SIZE = 10
+$(document).ready(function() {
+      $("#ph").bind('keyPress', function() { 
+            if($("#ph").val().length <= SIZE && PHONE_REGEX) {
+                return true;
+            }
+            else {
+                return false;
+            }  
+      });
+});
+
+
+
+
+
+
+
   //to make sure we can se whats going on on the inspection tool
   return (
     <div className="App">
@@ -749,13 +789,18 @@ if(returnedData.length===0){
      <input
      id="ph"
      type="number"
-     onKeyPress={(event) => {
-      if (!/[0-9]/.test(event.key)) {
-        event.preventDefault();
-      }
-    }}
+    // 
+    size="10"
+    //  required
+    //  onKeyPress={(event) => {
+    //   if (/@"\d{10}"/.test(event.key)) {
+    //     event.preventDefault();
+    //   }
+    // }}
+    // onKeyPress={phoneno}
       name="phone"
       placeholder="Phone number"
+    
       onChange={setInput}
     ></input>
     
