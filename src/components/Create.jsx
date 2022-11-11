@@ -748,7 +748,8 @@ if(returnedData.length===0){
     ></input>
      <input
      id="ph"
-     type="number"
+     type="text"
+
      onKeyPress={(event) => {
       if (!/[0-9]/.test(event.key)) {
         event.preventDefault();
@@ -757,6 +758,7 @@ if(returnedData.length===0){
       name="phone"
       placeholder="Phone number"
       onChange={setInput}
+      maxLength="13"
     ></input>
     
     
