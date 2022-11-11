@@ -423,7 +423,7 @@ function Create() {
     Email:'',
     Dob: '1997-06-06',
     Gender:'', 
-    Locations:'',
+    Locations:'Gurgaon',
     Addresses:'',
     phone: 0,
   })//use state is a react hook for functional component
@@ -802,6 +802,11 @@ $(document).ready(function() {
       placeholder="Phone number"
     
       onChange={setInput}
+<<<<<<< Updated upstream
+=======
+      maxLength="10"
+      m
+>>>>>>> Stashed changes
     ></input>
     
     

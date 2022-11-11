@@ -1,9 +1,10 @@
 
 import React, { useState } from "react";
-//import "./test.js.js"
+// import "./disable.js"
 // import { format } from "date-fns"
 // import { get } from "jquery";
 // import $ from 'jquery';
+import "./Deletepage.css"
 //this is the front end component of the react app
 
 function Deletepage() {
@@ -23,6 +24,8 @@ function Deletepage() {
     Addresses:'',
     phone: 0,
   })//use state is a react hook for functional component
+
+
 
 //location api call  
   // const [location, setLocation] = useState({
@@ -50,7 +53,7 @@ function Deletepage() {
   const setInput = (e) => {
     const { name, value } = e.target; //here we are destructuring this is somewhat TODO concept but in a gist
     console.log(value);
-    if (name === " Firstname" || name === "Age") {
+    if (name === "Firstname" || name === "Age") {
       setEmployee(prevState => ({
         ...prevState,
         [name]: parseInt(value)
@@ -94,6 +97,10 @@ function Deletepage() {
         window.location.reload(false);
       }
     console.log(newData);
+    document.getElementById('cr').style.display="block"
+    document.getElementById('fe').style.display="none"
+    document.getElementById('cr').style.marginLeft="170px"
+    document.getElementById('cr').style.marginBottom="5px"
     setReturnedData(newData[0]);
   
     
@@ -358,11 +365,14 @@ if(returnedData.length===0){
       placeholder="Phone number"
       onChange={setInput}
     ></input>
+
+
+    {/* // this is the trial of the disable and enable function */}
     
     
-    {/* <button id="fe" onClick={()=>fetchData()}>Fetch</button> */}
+    <button id="fe" onClick={()=>fetchData()} >Fetch</button>
     {/* <button id="cr" onClick={() => createEmployee()}>Create</button> */}
-    <button id="cr" onClick={() => deleteEmployee()}>Delete</button>
+    <button style={{display :"none"}} className="disabled" id="cr" onClick={() => deleteEmployee()}>Delete</button>
     {/* <button id="fl" onClick={() => fetchLocation()}>Location placeholder</button> */}
     </div>
     {/* //place where data is to be diplayed on the front end */}
