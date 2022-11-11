@@ -788,25 +788,23 @@ $(document).ready(function() {
     ></input>
      <input
      id="ph"
-     type="number"
-    // 
-    size="10"
-    //  required
-    //  onKeyPress={(event) => {
-    //   if (/@"\d{10}"/.test(event.key)) {
-    //     event.preventDefault();
-    //   }
-    // }}
-    // onKeyPress={phoneno}
+
+   
+     type="text"
+
+     onKeyPress={(event) => {
+      if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();
+      }
+    }}
       name="phone"
       placeholder="Phone number"
     
       onChange={setInput}
-<<<<<<< Updated upstream
-=======
+
       maxLength="10"
-      m
->>>>>>> Stashed changes
+     
+
     ></input>
     
     

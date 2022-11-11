@@ -9,13 +9,20 @@
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
     "date-fns": "^2.29.3",
+<<<<<<< Updated upstream
     "express": "^4.18.1",
+    "history": "^5.3.0",
+=======
+    "express": "^4.18.2",
+>>>>>>> Stashed changes
     "jquery": "^3.6.1",
     "moment": "^2.29.4",
     "mssql": "^9.0.1",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
     "package.json": "^2.0.1",
+    "packages.json": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
