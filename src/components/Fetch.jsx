@@ -1,12 +1,12 @@
 
 // import React, { useState } from "react";
-// //import "./components/test.js"
+// //import "./test.js.js"
 // // import { format } from "date-fns"
 // // import { get } from "jquery";
 // // import $ from 'jquery';
 // //this is the front end component of the react app
 
-// function Create() {
+// function Fetch() {
 //   const [returnedData, setReturnedData] = useState(['hello']);
 
 //   const [employee, setEmployee] = useState({
@@ -50,7 +50,7 @@
 //   const setInput = (e) => {
 //     const { name, value } = e.target; //here we are destructuring this is somewhat TODO concept but in a gist
 //     console.log(value);
-//     if (name === "EmployeeID" || name === "Age") {
+//     if (name === "Firstname" || name === "Age") {
 //       setEmployee(prevState => ({
 //         ...prevState,
 //         [name]: parseInt(value)
@@ -360,8 +360,8 @@
 //     ></input>
     
     
-//     {/* <button id="fe" onClick={()=>fetchData()}>Fetch</button> */}
-//     <button id="cr" onClick={() => createEmployee()}>Create</button>
+//     <button id="fe" onClick={()=>fetchData()}>Fetch</button>
+//     {/* <button id="cr" onClick={() => createEmployee()}>Create</button> */}
 //     {/* <button id="cr" onClick={() => deleteEmployee()}>Delete</button> */}
 //     {/* <button id="fl" onClick={() => fetchLocation()}>Location placeholder</button> */}
 //     </div>
@@ -389,13 +389,18 @@
 //   );
 // }
 
-// export default Create;
+// export default Fetch;
 
 // //how do we go ahead and make the API call, store the value in rd data
 // //and then produce that change on the UI
 
 // //inside our getDAta call(newdata here const newData = await fetch(url,{ )
 // //we are going to do  set rd data
+
+
+
+
+
 
 
 
@@ -406,7 +411,7 @@ import React, { useState } from "react";
 // import $ from 'jquery';
 //this is the front end component of the react app
 
-function Create() {
+function Fetch() {
   const [returnedData, setReturnedData] = useState(['hello']);
 
   const [employee, setEmployee] = useState({
@@ -748,16 +753,7 @@ if(returnedData.length===0){
     ></input>
      <input
      id="ph"
-
      type="number"
-     onKeyPress={(event) => {
-      if (!/[0-9]/.test(event.key)) {
-        event.preventDefault();   
-      }
-    }}
-   
-     type="text"
-
      onKeyPress={(event) => {
       if (!/[0-9]/.test(event.key)) {
         event.preventDefault();
@@ -766,13 +762,12 @@ if(returnedData.length===0){
       name="phone"
       placeholder="Phone number"
       onChange={setInput}
-      maxLength="13"
     ></input>
     
     
-    {/* <button id="fe" onClick={()=>fetchData()}>Fetch</button> */}
-    <button id="cr" onClick={() => createEmployee()}>Create</button>
-    {/* <button id="cr" onClick={() => deleteEmployee()}>Create</button> */}
+    <button id="fe" onClick={()=>fetchData()}>Fetch</button>
+    {/* <button id="cr" onClick={() => createEmployee()}>Create</button> */}
+    {/* <button id="cr" onClick={() => deleteEmployee()}>Fetch</button> */}
     {/* <button id="fl" onClick={() => fetchLocation()}>Location placeholder</button> */}
     </div>
     {/* //place where data is to be diplayed on the front end */}
@@ -800,7 +795,7 @@ if(returnedData.length===0){
   );
 }
 
-export default Create;
+export default Fetch;
 
 //how do we go ahead and make the API call, store the value in rd data
 //and then produce that change on the UI
