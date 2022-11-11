@@ -748,6 +748,14 @@ if(returnedData.length===0){
     ></input>
      <input
      id="ph"
+
+     type="number"
+     onKeyPress={(event) => {
+      if (!/[0-9]/.test(event.key)) {
+        event.preventDefault();   
+      }
+    }}
+   
      type="text"
 
      onKeyPress={(event) => {
