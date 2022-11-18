@@ -3,10 +3,10 @@
 // //import "./components/test.js"
 // // import { format } from "date-fns"
 // // import { get } from "jquery";
- import $ from 'jquery'; 
- import PHONE_REGEX from 'jquery';
- import { ready } from 'jquery';
- import bind from 'jquery'
+//  import $ from 'jquery'; 
+//  import PHONE_REGEX from 'jquery';
+//  import { ready } from 'jquery';
+//  import bind from 'jquery'
 // //this is the front end component of the react app
 
 // function Create() {
@@ -655,17 +655,7 @@ if(returnedData.length===0){
 
 
 
- var SIZE = 10
-$(document).ready(function() {
-      $("#ph").bind('keyPress', function() { 
-            if($("#ph").val().length <= SIZE && PHONE_REGEX) {
-                return true;
-            }
-            else {
-                return false;
-            }  
-      });
-});
+
 
 
 
@@ -681,9 +671,14 @@ $(document).ready(function() {
     <input
      id="vi"
       name="vid"
-
+      onKeyPress={(event) => {
+        if (!/[v{1}|V{1}|0-9]/.test(event.key)) {
+          event.preventDefault();
+        }
+      }}
       placeholder="vid"
       onChange={setInput}
+      maxLength="5"
     ></input>
 
    <input
